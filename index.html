@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+        var numofwin = 0;
+        var numoflose = 0;
+
+        function calculate(x) {
+            var y = Math.round(Math.random() * 4 + 1);
+            if (x == 'stop') {
+                form.display.value = 'Total win :' + numofwin;
+                form.display2.value = 'Total loss :' + numoflose;
+                numofwin = 0;
+                numoflose = 0;
+
+            } else {
+                if (x == y) {
+                    numofwin++;
+                    form.display.value = 'Congrats! you win.';
+                    form.display2.value = 'your guess matched!';
+                } else {
+                    numoflose++;
+                    form.display.value = 'Sorry, you lose.';
+                    form.display2.value = 'Random number was :' + y;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <form action="" name="form">
+            <div class="display-area main-bar" inputmode="text">
+
+                <input type="text" value="" class="form-control" name="display" placeholder="0">
+                <input type="text" value="" class="form-control" name="display2" placeholder="">
+
+            </div>
+
+            <div class="button-area">
+                <div class="header-center title">
+                    <p>Simple Guessing Game</p>
+                    <!--<input type="button" name="btn" value="7" class="btn btn-primary" onclick="calculate(this.value)" >
+                    <input type="button" name="btn" value="8" class="btn btn-primary" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="9" class="btn btn-primary" onclick="calculate(this.value)" > -->
+                    <!-- <input type="button" name="btn" value="+" class="btn btn-warning" onclick="calculate(this.value)" > -->
+                </div>
+                <div class="line line1">
+                    <input type="button" name="btn" value="4" class="btn btn-primary btn1"
+                        onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="5" class="btn btn-primary btn2"
+                        onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="restart" class="btn btn-danger stop-button"
+                        onclick="calculate('stop')">
+                    <!-- <input type="button" name="btn" value="*" class="btn btn-warning" onclick="calculate(this.value)" > -->
+                </div>
+                <div class="line">
+                    <input type="button" name="btn" value="1" class="btn btn-primary" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="2" class="btn btn-primary" onclick="calculate(this.value)">
+                    <input type="button" name="btn" value="3" class="btn btn-primary" onclick="calculate(this.value)">
+                    <!-- <input type="button" name="btn" value="-" class="btn btn-warning" onclick="calculate(this.value)" > -->
+                </div>
+                <div class="line">
+                    <!-- <input type="button" name="btn" value="0" class="btn btn-primary" onclick="calculate(this.value)" > -->
+                    <!-- <input type="button" name="btn" value="00" class="btn btn-primary" onclick="calculate(this.value)" >
+                    <input type="button" name="btn" value="." class="btn btn-primary" onclick="calculate(this.value)" > -->
+                    <!-- <input type="button" name="btn" value="/" class="btn btn-warning" onclick="calculate(this.value)" > -->
+                </div>
+                <!-- <div class="last">
+                    <input type="button" name="btn" value="C" class="btn btn-danger" onclick="form.display.value = null" >
+                    <input type="button" name="btn" value="CE" class="btn btn-danger"
+                    onclick="ap=form.display.value.slice(0,-1);form.display.value=ap;" >
+                    <input type="button" name="btn" value="=" class="btn btn-success" onclick="form.display.value = eval(form.display.value)" >
+                    
+                </div> onclick="x = form.display.value.slice(0, -1);form.display.value = x;" -->
+            </div>
+
+        </form>
+    </div>
+
+    <div class="developer">
+        Developed by : <a href="https://www.facebook.com/mdsanaullah.mdsanaullah.963">Sanaullah (facebook
+            link)</a><br>or <a href="mailto:rrbsanaullah2000@gmail.com">Email me here.</a>
+    </div>
+
+</body>
+
+</html>
